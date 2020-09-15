@@ -1,33 +1,36 @@
-import React, { Component } from 'react';
-import axios from 'axios'
+import React, {useState} from 'react';
+import axios from 'axios';
+import Results from './results';
+import { useParams, Link } from "react-router";
+import { withRouter } from "react-router";
+import NavBar from '../pages.js/NavBar';
 
 
-class Dashboard extends Component {
 
-    doThis = () =>{
+function Dashboard(){
     
-
-        fetch(`http://localhost:3000/cheese/${this.props.id}/dashboard`)
-            .then(r => r.json())
-            .then(data=>{
-                    console.log(data)
-                  
-                }
-          
-            ).catch(err => alert('No recipe!'))
+    const [ results, setResults ] = useState([])
+    let { id } = useParams();
 
 
+    const handleAxios = () =>{
+        axios.get(`http://localhost:3000/cheese/${id}/dashboard`)
+        .then(function (response) {
+            setResults(response.data.cheese)
+        })   
     }
 
 
-    render(){
-        return(
-            <div>
-                {this.doThis()}
 
-            </div>
-        )
-    }
+    return(
+        <>
+        <NavBar id = {`${id}`}/>
+        <button onClick={handleAxios}>View my recipe</button>
+        <Results results={results}/>
+        </>
+    )
+
 }
 
-export default Dashboard;
+
+export default withRouter(Dashboard)

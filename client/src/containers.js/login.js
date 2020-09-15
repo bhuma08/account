@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import Dashboard from './dashboard'
+import NavBar from '../pages.js/NavBar'
+
 
 
 class LoginCard extends Component {
@@ -8,8 +9,8 @@ class LoginCard extends Component {
 
      state = {
             email: '',
-            password: '',
-            info: ''
+            password: ''
+
     }
 
     handleChange(e) {
@@ -38,25 +39,23 @@ class LoginCard extends Component {
             .then(data=>{
                 if(data.id){
                     console.log(data)
-                    this.setState({info : data.id})    
+                    this.props.history.push(`/${data.id}/dashboard`)
                 }
           
             }).catch(err => alert('Invalid Login'))     
-
-        console.log(this.state.info)
 
     }
 
     render() {
         return (
             <div>
+               
                 <form onSubmit={this.handleSubmit} className="login-form">
                     <label>Email</label>
                     <input type="text" name="email" id="email" onChange={this.handleChange}></input>
                     <label>Password</label>
                     <input type="password" name="password" onChange={this.handleChange} id="password"></input>
                     <input type='submit'></input>
-                    <Dashboard id={this.state.info}></Dashboard>
                 </form>
             </div>
         )
