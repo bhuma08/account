@@ -6,7 +6,9 @@ const createCheese = `INSERT INTO cheese_overview (recipe, userid) VALUES ($1, $
 const createCheeseInstances = `INSERT INTO cheese_instance (cheese_id, status) VALUES ($1, false)`;
 const userIndex = `SELECT * FROM users`;
 const insertUser = `INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *`;
-const userEmail = `SELECT * FROM users WHERE email = $1`
+const userEmail = `SELECT * FROM users WHERE email = $1`;
+const shareAll = `SELECT * FROM postshared`;
+const shareCheese = `INSERT INTO postshared (recipe) VALUES ($1) RETURNING *`;
 
 
-module.exports = {index, show, createCheese, createCheeseInstances, userIndex, insertUser, userEmail}
+module.exports = { index, show, createCheese, createCheeseInstances, userIndex, insertUser, userEmail, shareAll, shareCheese }

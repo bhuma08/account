@@ -1,4 +1,4 @@
-
+DROP TABLE IF EXISTS postshared;
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS cheese_overview CASCADE;
 DROP TABLE IF EXISTS cheese_instance CASCADE;
@@ -24,6 +24,16 @@ CREATE TABLE cheese_instance(
     status BOOLEAN DEFAULT false
 );
 
+CREATE TABLE postshared(
+    id SERIAL,
+    recipe VARCHAR NOT NULL
+);
+
+INSERT INTO postshared(recipe)
+VALUES(
+    'Example 1 of first shared recipe!'
+);
+
 INSERT INTO users(email, password)
 VALUES(
     'bhuma@gmail.com',
@@ -39,3 +49,4 @@ INSERT INTO cheese_instance(cheese_id, status)
 SELECT cheese_overview.cheese_id, false
 FROM cheese_overview
 WHERE cheese_overview.cheese_id = 1;
+

@@ -8,15 +8,19 @@ class Results extends Component{
 
     render(){
  
-        const allData = this.props.results.map((item, idx) =>
-            <div key={idx}>
-                <p>{item.recipe}</p>
+        // const allData = this.props.results.map((item, idx) =>
+        //     <div key={idx}>
+        //         <p>{item.recipe}</p>
                 
-            </div>) 
+        //     </div>) 
 
         return (
             <div>
-                {allData} 
+                {/* {allData}  */}
+                {this.props.results.map((item, idx) =>
+                    <div key={idx}>
+                        <p>{item.recipe}</p>
+                    </div>) }
             </div>
         )
     }
