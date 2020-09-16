@@ -13,45 +13,9 @@ class AllPosts extends Component {
           .then(data => data.json())
           .then(results => {
             const apiInfo = results.cheese.map(obj => obj.recipe);
-            // update the state for next render
             this.setState({apiInfo})
         });
     }
-
-    // async componentDidMount(){
-    //     const url = `http://localhost:3000/cheese/all`;
-    //     const response = await fetch(url)
-    //     const data = await response.json();
-    //     console.log(data.cheese)
-    //     this.setState({ 
-    //         results: data.cheese.map(item =>({
-    //         recipe: item.recipe
-    //     })) 
-    //     })
-    //     console.log(this.state.results)
-     
-    // }
-    // componentDidMount() {
-    //     fetch(`http://localhost:3000/cheese/all`)
-    //         .then(response => {
-    //         return response.json();
-    //         })
-    //         .then((data) => {
-    //             this.setState({
-    //             results: data.cheese.map(item => ({
-    //                 recipe: item.recipe,
-    //             }))
-    //         });
-
-    //         console.log(this.state.results)   
-    //         })
-    // }
-
-    // renderResults= ()=> this.state.results.map((item, idx)=>{
-    //     <div key={idx}>
-    //         {item.recipe}
-    //     </div>
-    // })
 
     render(){
         {console.log(this.state.apiInfo)}
@@ -64,8 +28,7 @@ class AllPosts extends Component {
                     {item}
                 </p>
                 ))}
-            </>
-            
+            </>    
         )
     }
 }
