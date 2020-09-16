@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom'
+import SharePost from './sharepost';
 
 
 class Results extends Component{
@@ -20,6 +21,7 @@ class Results extends Component{
                 {this.props.results.map((item, idx) =>
                     <div key={idx}>
                         <p>{item.recipe}</p>
+                        <SharePost recipe={item.recipe}/>
                     </div>) }
             </div>
         )

@@ -9,6 +9,7 @@ class NavBar extends Component {
         return (
             <div>
                 <NavLink to={`/${this.props.id}/addnew`}>Create your recipe</NavLink>
+                <NavLink to='/posts'>Shared Posts</NavLink>
 
             </div>
         )
