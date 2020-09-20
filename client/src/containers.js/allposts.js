@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import results from './results';
-
 
 class AllPosts extends Component {
         
 
     state = {
-        apiInfo: []
+        apiInfo: [],
     }
     componentDidMount() {
         fetch('http://localhost:3000/cheese/all')
