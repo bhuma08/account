@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 class AllPosts extends Component {
         
-
     state = {
         apiInfo: [],
     }
@@ -16,11 +15,11 @@ class AllPosts extends Component {
     }
 
     render(){
-        {console.log(this.state.apiInfo)}
 
         return(
             <>
-           
+            <h1>Shared Recipe...</h1>
+
                 {this.state.apiInfo.map((item, idx) => (
                 <p key={idx}>
                     {item}

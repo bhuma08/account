@@ -5,19 +5,12 @@ import SharePost from './sharepost';
 
 class Results extends Component{
 
-
-
     render(){
  
-        // const allData = this.props.results.map((item, idx) =>
-        //     <div key={idx}>
-        //         <p>{item.recipe}</p>
-                
-        //     </div>) 
-
         return (
             <div>
-                {/* {allData}  */}
+             
+                <h1>My Secret Recipe...</h1>
                 {this.props.results.map((item, idx) =>
                     <div key={idx}>
                         <p>{item.recipe}</p>

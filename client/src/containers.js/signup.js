@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom'
 
 class SignUpCard extends Component {
 
-
      state = {
             name: '',
             email: '',

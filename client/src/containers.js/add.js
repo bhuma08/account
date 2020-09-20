@@ -28,9 +28,15 @@ class AddNew extends Component {
         fetch(`http://localhost:3000/cheese/${this.state.userid}/dashboard`, options)
             .then(r => r.json())
             // .then(console.log(data))
-            .then(this.props.history.push(`/${this.state.userid}/dashboard`))
-            .catch(console.warn)      
+            // .then(this.props.history.push(`/${this.state.userid}/dashboard`))
+            .then( a => alert('You have succesfully created your recipe.'))
+            .catch(console.warn)   
+            
     }
+
+    // info = ()=>{
+    //     return <h1> Success </h1>
+    // }
 
 
     render(){
@@ -38,7 +44,7 @@ class AddNew extends Component {
             <div>
                 <form onSubmit={this.handleSubmit} className='addNew-form'>
                     <label>Your Recipe: </label>
-                    <input type='text' id="recipe" name ='recipe' onChange={this.handleChange}></input>
+                    <textarea id="recipe" name ='recipe' onChange={this.handleChange}></textarea>
                     <input type='submit'/>
                 </form>
             </div>

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import NavBar from '../pages.js/NavBar'
-
 
 
 class LoginCard extends Component {

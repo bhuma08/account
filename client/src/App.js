@@ -5,6 +5,7 @@ import AddNewPage from './pages.js/AddNewPage'
 import DashboardPage from './pages.js/DashboardPage'
 import AllPosts from './containers.js/allposts'
 import SignUpCard from './containers.js/signup'
+import LandingPage from './pages.js/LandingPage'
 
 export class App extends Component {
     render() {
@@ -12,6 +13,7 @@ export class App extends Component {
             <div id="app">
                 <h1>Say Cheese!</h1>
                 <Switch>
+                    <Route exact path='/' component ={LandingPage}/>
                     <Route path='/:id/dashboard' component={ DashboardPage }/>
                     <Route path='/:id/addnew' component={ AddNewPage }/>
                     <Route path='/login' component={ LoginCard }/>
