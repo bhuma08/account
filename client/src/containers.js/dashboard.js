@@ -6,6 +6,8 @@ import { withRouter } from "react-router";
 import Modal from 'react-modal';
 import AddNew from './add'
 import AllPosts from './allposts';
+import { connect } from 'react-redux';
+import { useSelector } from "react-redux";
 
 Modal.setAppElement('#root')
 
@@ -27,11 +29,17 @@ function Dashboard(){
     const [modalIsOpenForAddNew, setModalIsOpenForAddNew] = useState(false)
     const [modalSharing, setModalSharing] = useState(false)
     let { id } = useParams();
+    const token = useSelector(state => state.accessToken);
+    //let { accessToken } = useParams();
 
 
     const handleAxios = () =>{
+
+        const AuthStr = 'Bearer '.concat(token); 
+
+        console.log(AuthStr)
     
-        axios.get(`http://localhost:3000/cheese/${id}/dashboard`)
+        axios.get(`http://localhost:3000/cheese/${id}/dashboard`, { headers: { Authorization: AuthStr } })
         .then(function (response) {
             setResults(response.data.cheese)
         })   
@@ -82,5 +90,12 @@ function Dashboard(){
         </>
     )
 }
+// const mapStateToProps = state => ({
+//     accessToken: state.accessToken
+// })
 
-export default withRouter(Dashboard)
+// export default connect (mapStateToProps)(Dashboard);
+
+export default Dashboard;
+
+

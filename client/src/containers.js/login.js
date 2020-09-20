@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
 
 
 class LoginCard extends Component {
@@ -7,7 +8,8 @@ class LoginCard extends Component {
 
      state = {
             email: '',
-            password: ''
+            password: '',
+            token: ''
 
     }
 
@@ -23,8 +25,6 @@ class LoginCard extends Component {
             email: e.target.email.value,
             password: e.target.password.value
         }
-
-        console.log(data)
     
         const options = {
             method: 'POST',
@@ -36,12 +36,15 @@ class LoginCard extends Component {
             .then(r => r.json())
             .then(data=>{
                 if(data.id){
-                    console.log(data)
-                    this.props.history.push(`/${data.id}/dashboard`)
+                    this.setState({ token: data.accessToken})
+                    this.props.history.push({
+                        pathname: `/${data.id}/dashboard`
+                    })
+                    console.log(this.state.token)
+                    this.props.add(this.state.token);
                 }
           
-            }).catch(err => alert('Invalid Login'))     
-
+            }).catch(err => alert('Invalid Login'))    
     }
 
     render() {
@@ -60,4 +63,9 @@ class LoginCard extends Component {
     }
 }
 
-export default withRouter(LoginCard);
+const mDTP = dispatch => ({
+    add: accessToken => dispatch({ type: "ADD_TOKEN", payload: accessToken})
+})
+
+
+export default connect(null,mDTP)(LoginCard);
