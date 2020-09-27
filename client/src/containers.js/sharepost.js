@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../styles/sharepost.css'
+
 
 class SharePost extends Component{
 
@@ -25,7 +27,7 @@ class SharePost extends Component{
     render(){
         return (
             <div>
-                <button onClick ={this.sharepost}>Share</button>
+                <button className='share' onClick ={this.sharepost}>Share</button>
 
             </div>
         )

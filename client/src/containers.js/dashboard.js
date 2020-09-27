@@ -8,6 +8,7 @@ import AddNew from './add'
 import AllPosts from './allposts';
 import { connect } from 'react-redux';
 import { useSelector } from "react-redux";
+import '../styles/dashboard.css'
 
 Modal.setAppElement('#root')
 
@@ -69,24 +70,29 @@ function Dashboard(){
     return(
         <>
         {/* <NavBar id = {`${id}`}/> */}
+        <h1>Your Dashbord</h1>
+        <div className='three-grid'>
+            <button className='three-btns' onClick={handleAxios}>My Secret Recipe</button>
+            <Modal class='modal' isOpen={modalIsOpen} shouldCloseOnOverlayClick={true} onRequestClose={()=> setModalIsOpen(false)}>
+                <button className='x' onClick={setModalIsOpenToFalse}>x</button>
+                <Results results={results}/>
+                
+            </Modal>
 
-        <button onClick={handleAxios}>My Secret Recipe</button>
-        <Modal isOpen={modalIsOpen} shouldCloseOnOverlayClick={true} onRequestClose={()=> setModalIsOpen(false)}>
-            <Results results={results}/>
-            <button onClick={setModalIsOpenToFalse}>Close</button>
-        </Modal>
+            <button className='three-btns' onClick={setModalIsOpenToTrue}>Create New Recipe</button>
+            <Modal isOpen={modalIsOpenForAddNew} shouldCloseOnOverlayClick={true} onRequestClose={()=> setModalIsOpenForAddNew(false)} style={customStyles}>
+                <button className='xx' onClick={setModalIsOpenToFalseForAddNew}>x</button>
+                <AddNew/>
+                
+            </Modal>
 
-        <button onClick={setModalIsOpenToTrue}>Create New Recipe</button>
-        <Modal isOpen={modalIsOpenForAddNew} shouldCloseOnOverlayClick={true} onRequestClose={()=> setModalIsOpenForAddNew(false)} style={customStyles}>
-            <AddNew/>
-            <button onClick={setModalIsOpenToFalseForAddNew}>Close</button>
-        </Modal>
-
-        <button onClick={setModalShareTrue}>All Shared Recipe</button>
-        <Modal isOpen={modalSharing} shouldCloseOnOverlayClick={true} onRequestClose={()=> setModalSharing(false)}>
-            <AllPosts/>
-            <button onClick={setModalShareFalse}>Close</button>
-        </Modal>
+            <button className='three-btns' onClick={setModalShareTrue}>All Shared Recipe</button>
+            <Modal isOpen={modalSharing} shouldCloseOnOverlayClick={true} onRequestClose={()=> setModalSharing(false)}>
+            <button className='x' onClick={setModalShareFalse}>x</button>
+                <AllPosts/>
+                
+            </Modal>
+        </div>
         </>
     )
 }

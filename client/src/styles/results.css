@@ -1,0 +1,41 @@
+.results {
+    /* background-image: url('https://i.pinimg.com/564x/df/7f/4c/df7f4c51df5edae3e9bf78fef81f4000.jpg');
+    background-size: cover;
+    background-repeat: no-repeat; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.recipe {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    padding: 1%;
+    width: 50%;
+    
+    
+    
+}
+
+.main{
+    background-image: url('https://i.pinimg.com/564x/9b/ca/8f/9bca8ff7337c01f26bcdf9491d790717.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 22.65px;
+    padding: 3%;
+    font-family: 'Caveat';
+    width: 500px;
+    height: 500px;
+    
+
+
+    
+
+}
+
+.heading {
+    margin-left: 5%;
+}

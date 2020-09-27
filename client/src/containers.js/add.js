@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { withRouter } from "react-router";
+import '../styles/add.css';
 
 class AddNew extends Component {
     state = {
@@ -28,20 +29,19 @@ class AddNew extends Component {
         fetch(`http://localhost:3000/cheese/${this.state.userid}/dashboard`, options)
             .then(r => r.json())
             // .then(console.log(data))
-            // .then(this.props.history.push(`/${this.state.userid}/dashboard`))
             .then( a => alert('You have succesfully created your recipe.'))
-            .catch(console.warn)   
+            // .then(this.setState({recipe: ' '}))
+            .catch(console.warn)  
             
     }
-
 
     render(){
         return(
             <div>
                 <form onSubmit={this.handleSubmit} className='addNew-form'>
                     <label>Your Recipe: </label>
-                    <textarea id="recipe" name ='recipe' onChange={this.handleChange}></textarea>
-                    <input type='submit'/>
+                    <textarea className='add-new-text' name ='recipe' onChange={this.handleChange}></textarea>
+                    <input className='add-submit' type='submit'/>
                 </form>
             </div>
         )

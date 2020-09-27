@@ -1,0 +1,28 @@
+.three-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    margin-top: 8%;
+    
+}
+
+.three-btns {
+    padding: 10%;
+    font-size: 40px;
+    background-image: url('https://i.pinimg.com/564x/d3/95/80/d39580bf6eb4b6c8b3bd1e16c40fa649.jpg');
+}
+
+.x {
+    background-color:#AE0D01;
+    color: ivory;
+    margin-left: 97%
+}
+.xx{
+    background-color:#AE0D01;
+    color: ivory;
+    margin-left: 90%;
+
+}
+.modal {
+    background-color: chocolate;
+}

@@ -29,10 +29,10 @@ CREATE TABLE postshared(
     recipe VARCHAR NOT NULL
 );
 
-INSERT INTO postshared(recipe)
-VALUES(
-    'Example 1 of first shared recipe!'
-);
+-- INSERT INTO postshared(recipe)
+-- VALUES(
+--     'Example 1 of first shared recipe!'
+-- );
 
 INSERT INTO users(email, password)
 VALUES(

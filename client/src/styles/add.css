@@ -1,0 +1,14 @@
+.add-new-text {
+    width: 500px;
+    height: 300px;
+    background-image:url('https://i.pinimg.com/564x/9b/ca/8f/9bca8ff7337c01f26bcdf9491d790717.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 3%;
+    font-family: 'Caveat';
+}
+.add-submit {
+    background-color:#AE0D01;
+    color: ivory;
+    margin-left: 85%;
+}

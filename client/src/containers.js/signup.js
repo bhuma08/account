@@ -20,25 +20,36 @@ class SignUpCard extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
+
+            const data = {
+                email: e.target.email.value,
+                password: e.target.password.value
+            }
+    
+            console.log(data.email.length)
+
+            if (data.email.length === 0 || data.password.length === 0 || !data.email.includes('@')) {
+                alert('Invalid Details')
+                return false;
+            } 
+            else 
+            {
         
-        const data = {
-            email: e.target.email.value,
-            password: e.target.password.value
-        }
-
-        console.log(data)
+            const options = {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {"Content-Type": "application/json"}
+            }
+        
+            fetch('http://localhost:3000/user', options)
+                .then(r => r.json())
+                .then(this.props.history.push(`/login`))
+                .catch((console.warn()))     
     
-        const options = {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {"Content-Type": "application/json"}
-        }
-    
-        fetch('http://localhost:3000/user', options)
-            .then(r => r.json())
-            .then(this.props.history.push(`/login`))
-            .catch((console.warn()))     
 
+        }
+        
+        
     }
 
     render() {
