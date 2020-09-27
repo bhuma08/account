@@ -34,10 +34,6 @@ class AddNew extends Component {
             
     }
 
-    // info = ()=>{
-    //     return <h1> Success </h1>
-    // }
-
 
     render(){
         return(

@@ -11,7 +11,7 @@ export class App extends Component {
     render() {
         return (
             <div id="app">
-                <h1>Say Cheese!</h1>
+                
                 <Switch>
                     <Route exact path='/' component ={LandingPage}/>
                     <Route path='/:id/dashboard' component={ DashboardPage }/>

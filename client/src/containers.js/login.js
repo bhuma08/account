@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
+import '../styles/login.css'
 
 
 class LoginCard extends Component {
@@ -53,10 +54,10 @@ class LoginCard extends Component {
                
                 <form onSubmit={this.handleSubmit} className="login-form">
                     <label>Email</label>
-                    <input type="text" name="email" id="email" onChange={this.handleChange}></input>
+                    <input type="text" name="email" className="input" onChange={this.handleChange}></input><br></br>
                     <label>Password</label>
-                    <input type="password" name="password" onChange={this.handleChange} id="password"></input>
-                    <input type='submit'></input>
+                    <input type="password" name="password" onChange={this.handleChange} className='input'></input>
+                    <input className='login-submit' type='submit'></input>
                 </form>
             </div>
         )

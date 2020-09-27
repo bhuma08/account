@@ -1,0 +1,27 @@
+.login-form {
+    margin: auto;
+    width: 30%;
+    /* border: 3px solid green; */
+    padding: 50px;
+    text-align: center;
+    margin-top: 10%;
+    background-image: url('https://i.pinimg.com/564x/df/84/4d/df844d31786695f2a2cd960ca637b05b.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:40%;
+    
+
+}
+
+.input {
+    width: 325px;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+
+.login-submit {
+    margin-left: 43%;
+    margin-top: 10%;
+    background-color:#AE0D01 ;
+    color: ivory;
+}
