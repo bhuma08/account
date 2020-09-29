@@ -1,5 +1,5 @@
 # Say Cheese: Individual Project
-#### Say Cheese allows a user to register and login to their account where they can create a secret recipe! This recipe is only visible to them. However, they do have an option to share their recipe to the entire users!
+Say Cheese allows a user to register and login to their account where they can create a secret recipe! This recipe is only visible to them. However, they do have an option to share their recipe to the entire users!
 
 ***
 
